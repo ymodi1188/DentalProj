@@ -1,0 +1,31 @@
+<!-- footer.component.html -->
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-block">
+        <h5>OFFICE HOURS</h5>
+        <ul class="office-hours">
+          <li *ngFor="let hour of officeHours">{{ hour.day }}: {{ hour.time }}</li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <img [src]="logoUrl" alt="Greenberg Orthodontics Logo" class="footer-logo">
+        <address>{{ address }}</address>
+        <p>{{ phone }}</p>
+      </div>
+      <div class="footer-block footer-rating">
+        <p class="rating">{{ rating }} ★★★★★</p>
+        <p>from {{ reviewCount }}+ Reviews</p>
+      </div>
+    </div>
+    <div class="footer-social">
+      <a href="{{ link.url }}" *ngFor="let link of socialLinks" class="social-link" target="_blank" rel="noopener noreferrer">
+        <i class="{{ link.iconClass }}"></i>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>© {{ currentYear }} Greenberg Orthodontics & TMJ | All Rights Reserved</p>
+      <div class="footer-links">
+        <a *ngFor="let link of bottomLinks" href="{{ link.url }}">{{ link.label }}</a>
+      </div>
+    </div>
+</footer>

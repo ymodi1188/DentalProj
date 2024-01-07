@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@fortawesome/fontawesome-free/css/all.css";
+.main-content {
+    padding-bottom: 150px; /* Adjust this value to match the height of your footer */
+  }
+  

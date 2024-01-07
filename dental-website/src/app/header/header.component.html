@@ -1,0 +1,27 @@
+<header class="main-header">
+    <div class="header-top">
+      <div class="container top-content">
+        <span class="cta">Schedule a Complimentary Consultation →</span>
+        <div class="contact-info">
+          <em class="orthodontist-info">{{ orthodontistInfo }}</em><br>
+          <span class="availability-info">{{ availabilityInfo }}</span>
+        </div>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <div class="container nav-container">
+        <ul class="navbar-nav">
+          <ng-container *ngFor="let item of navItems; let i = index">
+            <li class="nav-item">
+              <a [routerLink]="item.link" class="nav-link">{{ item.label }}</a>
+            </li>
+            <li *ngIf="i < navItems.length - 1" class="nav-separator"></li>
+          </ng-container>
+        </ul>
+        <div class="logo">
+          <img [src]="logoUrl" alt="Greenberg Orthodontics" class="header-logo">
+        </div>
+      </div>
+    </nav>
+  </header>
+  
