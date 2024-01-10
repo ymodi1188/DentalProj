@@ -6,16 +6,48 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  orthodontistInfo = 'PASADENA ORTHODONTIST';
-  availabilityInfo = 'Available 24/7 (626) 603-8178';
-  logoUrl = 'assets/logo.png'; // The path to your logo image
+
+
+ 
+  orthodontistInfo = 'MARKANDAY DENTAL DESIGN STUDIO';
+  availabilityInfo = 'Available 24/7 (1054) 000000';
+  logoUrl = 'logo.png'; // The path to your logo image
   navItems = [
-    { label: 'Services', link: '/services' },
-    { label: 'Smile Gallery', link: '/smile-gallery' },
-    { label: 'Testimonials', link: '/testimonials' },
-    { label: 'About Us', link: '/about-us' },
-    { label: 'New Patients', link: '/new-patients' },
-    { label: 'Contact', link: '/contact' },
-    { label: 'Referral', link: '/referral' }
+    {
+      label: 'Services',
+      dropdown: true,
+      subItems: ['Orthodontics', 'Invisalign', 'TMJ Therapy', 'Children\'s Orthodontics', 'Tooth Whitening', 'Laser Treatment'],
+      link: '/services'
+    },
+    {
+      label: 'New Patients',
+      dropdown: true,
+      subItems: ['Your first visit', 'New Patient Form'],
+      link: '/new-patients'
+    },
+    { label: 'Smile Gallery', dropdown: false, link: '/smile-gallery' },
+    { label: 'Testimonials', dropdown: false, link: '/testimonials' },
+    { label: 'Contact', dropdown: false, link: '/contact' },
+    {
+      label: 'About Us',
+      dropdown: true,
+      subItems: ['Dr. Markanday', 'Address on map', 'Blogs'],
+      link: '/about-us'
+    },
+    // Adding more items without dropdowns
+
+    // ... add other items as needed ...
   ];
+  // Object to track which dropdowns are open
+  dropdownOpen: { [key: string]: boolean } = {};
+
+  toggleDropdown(itemLabel: string, isOpen: boolean): void {
+    this.dropdownOpen[itemLabel] = isOpen;
+  }
+
+  closeDropdowns(): void {
+    Object.keys(this.dropdownOpen).forEach(key => {
+      this.dropdownOpen[key] = false;
+    });
+  }
 }

@@ -152,9 +152,74 @@
   .nav-link:not(:hover), .action-item:not(:hover) {
     transform: scale(1); /* Return to normal size */
   }
+  /* ... existing styles ... */
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: rgba(173, 216, 230, 0.7); /* Baby blue with some transparency */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-item {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+}
+
+.show .dropdown-menu {
+  display: block;
+}
+
+/* ... additional styles and media queries as needed ... */
+
   
   /* ... additional styles and media queries as needed ... */
   
   
   /* Additional styles and media queries as needed */
-  
+  /* ... existing styles ... */
+
+.nav-item.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  border-radius: 3%;
+  background-color: rgba(137, 196, 244, 0.7); /* Baby blue with some transparency */
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  z-index: 100;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.dropdown-item:hover {
+  background-color: #add8e6; /* Lighter shade for hover */
+}
+
+/* ... additional styles and media queries as needed ... */

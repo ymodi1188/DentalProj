@@ -12,10 +12,21 @@
       <div class="container nav-container">
         <ul class="navbar-nav">
           <ng-container *ngFor="let item of navItems; let i = index">
-            <li class="nav-item">
-              <a [routerLink]="item.link" class="nav-link">{{ item.label }}</a>
-            </li>
+            <li class="nav-item" [class.dropdown]="item.dropdown"
+            (mouseover)="toggleDropdown(item.label, true)" 
+            (mouseleave)="toggleDropdown(item.label, false)">
+          <a [routerLink]="item.link" class="nav-link" *ngIf="!item.dropdown">{{ item.label }}</a>
+          <a class="nav-link dropdown-toggle" *ngIf="item.dropdown">{{ item.label }}</a>
+          <div class="dropdown-menu" *ngIf="dropdownOpen[item.label]"
+              (mouseover)="toggleDropdown(item.label, true)" 
+              (mouseleave)="toggleDropdown(item.label, false)">
+            <a class="dropdown-item" href="#" *ngFor="let subItem of item.subItems">{{ subItem }}</a>
+          </div>
+        </li>
+            
+              
             <li *ngIf="i < navItems.length - 1" class="nav-separator"></li>
+     
           </ng-container>
         </ul>
         <div class="logo">
