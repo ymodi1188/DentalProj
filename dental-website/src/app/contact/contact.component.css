@@ -1,0 +1,161 @@
+.contact-page {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Align items to the top */
+  margin: auto;
+  max-width: 1200px;
+  position: relative;
+}
+.form-section {
+  flex: 1;
+  max-width: 50%; /* Adjust this to match the heading width */
+  padding: 20px;
+  text-align: left; /* Align text to the left */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  position: relative;
+  z-index: 2; /* to ensure the form section is above the slanted separator */
+}
+.heading-section h1 {
+  max-width: 50%; /* Adjust this to control the width of the heading */
+}
+.form-group {
+  align-self: flex-start;
+  background-color: azure;
+  max-width: 80%; /* This makes the input fields as wide as their container */
+margin: 0 ; /* This centers the form-group within the form-section */
+}
+.form-group label {
+  text-align: left;
+  margin-bottom: 5px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+  width: 50%; /* Full width of the form-group */
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  }
+  
+  /* Ensure the button matches the input fields in width */
+  button {
+  width: 50%;
+  padding: 10px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  }
+  .image-section {
+    flex: 1;
+  background: url('/assets/doctor-image.jpg') no-repeat center center / cover;
+  position: relative;
+    height: 100vh; /* Full height of the viewport */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+  }
+  .contact-page::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Width of the separator */
+    background: #000; /* Color of the separator */
+    transform: skewY(-10deg); /* Adjust the skew angle as needed */
+    z-index: 1; /* to ensure the separator is between the sections */
+  }
+  .image-section:hover {
+    transform: scale(0.8); /* Decrease the size of the image */
+  }
+  
+  .image-section img {
+    width: 100%;
+    height: 100%;
+    transition: filter 0.3s ease-in-out;
+  }
+  
+  .image-section:hover img {
+    filter: blur(8px); /* Blur the image */
+  }
+
+.doctor-info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  color: white;
+  width: 100%;
+  height: 100%;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  transition: opacity 0.3s ease-in-out;
+}
+
+
+.image-section:hover .doctor-info {
+  display: flex;
+}
+
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 10px;
+  font-size: 24px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .contact-page {
+    flex-direction: column;
+  }
+  .contact-page::before {
+    display: none;
+  }
+  .form-section,
+  .image-section {
+    width: 100%;
+  }
+
+  .image-section {
+    height:
+    300px; /* Adjust as needed */
+  }
+  
+  .doctor-info {
+  display: none; /* Optionally hide the overlay on smaller devices */
+  }
+  }

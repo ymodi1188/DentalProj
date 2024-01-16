@@ -10,6 +10,10 @@
     </div>
     <nav class="main-nav">
       <div class="container nav-container">
+        <div class="logo">
+          <img [src]="logoUrl" alt="Greenberg Orthodontics" class="header-logo">
+        </div>
+        <button class="nav-toggle" (click)="toggleNav()">&#9776;</button> <!-- Menu button -->
         <ul class="navbar-nav">
           <ng-container *ngFor="let item of navItems; let i = index">
             <li class="nav-item" [class.dropdown]="item.dropdown"

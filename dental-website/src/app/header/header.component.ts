@@ -11,7 +11,7 @@ export class HeaderComponent {
  
   orthodontistInfo = 'MARKANDAY DENTAL DESIGN STUDIO';
   availabilityInfo = 'Available 24/7 (1054) 000000';
-  logoUrl = 'logo.png'; // The path to your logo image
+  logoUrl = '/assets/logo.png'; // The path to your logo image
   navItems = [
     {
       label: 'Services',
@@ -40,6 +40,11 @@ export class HeaderComponent {
   ];
   // Object to track which dropdowns are open
   dropdownOpen: { [key: string]: boolean } = {};
+  navActive = false;
+
+  toggleNav(): void {
+    this.navActive = !this.navActive;
+  }
 
   toggleDropdown(itemLabel: string, isOpen: boolean): void {
     this.dropdownOpen[itemLabel] = isOpen;

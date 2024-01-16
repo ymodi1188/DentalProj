@@ -14,7 +14,7 @@ export class FooterComponent {
       { day: 'Thursday', time: '9:00AM-5:00PM' },
        { day: 'Friday', time: '7:00AM-4:00PM' }
   ];
-  logoUrl = 'assets/logo-footer.png';
+  logoUrl = '/assets/logo.png';
   address = '2035 Lake Ave, Altadena CA 91001';
   phone = '(626) 603-8164';
   rating = '5.0';

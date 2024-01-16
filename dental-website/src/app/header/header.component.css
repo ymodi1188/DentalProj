@@ -9,14 +9,15 @@
   
   .header-top {
     background-color: #FFFFFF;
-    padding: .90 rem 0; /* Increased padding for a bigger top bar */
+    padding-top: 0.9rem;
+    padding-bottom: 0.9rem; /* Corrected padding for a bigger top bar */
     text-align: center;
     color: #00A4BD;
     font-size: 1.2rem; /* Increase font size as desired */
     font-weight: bold;
-   
     border-bottom: 2px solid #02747E; /* Thicker border for the separator */
-  }
+    position: relative; /* Position relative for absolute positioning of the logo */
+}
   
   .container {
     display: flex;
@@ -93,15 +94,17 @@
   }
   
   .header-logo {
-    height: 80px; /* Increased size of the logo */
+    height: 60px; /* Increased size of the logo */
   }
   
   .logo {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: -40px; /* Adjust top position to vertically center the logo */
-  }
+    top: -50px; /* Position the logo at the top of the header-top */
+    left: 50%; /* Center the logo */
+    transform: translateX(-50%) translateY(-50%); /* Adjust both horizontally and vertically */
+    height: auto; /* Adjust the height as needed */
+    z-index: 1010; /* Ensure the logo is above the other header content */
+}
   .orthodontist-info {
     color: grey; /* or any specific shade you prefer */
     font-style: italic;
@@ -111,12 +114,6 @@
     color: #00A4BD; /* Adjust color to match design */
   }
   
-  /* .header-top .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column; /* Stack elements vertically 
-  } */
   
   .nav-separator {
     height: 10px; /* Adjust height for visual preference */
@@ -217,9 +214,69 @@
   color: #000;
   text-decoration: none;
 }
+.menu-icon {
+    
+  display: none; /* Show the menu icon */
+  cursor: pointer;
+  z-index: 1011; /* Ensure the menu icon is clickable */
+  /* Add more styles for the menu icon here */
+}
 
 .dropdown-item:hover {
   background-color: #add8e6; /* Lighter shade for hover */
 }
+@media (max-width: 768px) {
+  .main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between; /* Align elements to either end */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem; /* Reduce padding on smaller screens */
+}
 
-/* ... additional styles and media queries as needed ... */
+.cta {
+    display: none; /* Hide the call to action text */
+}
+
+.navbar-nav,
+.nav-link,
+.nav-item,
+.dropdown,
+.dropdown-menu {
+    display: none; /* Hide the navigation items */
+}
+
+.menu-icon {
+    
+    display: block; /* Show the menu icon */
+    cursor: pointer;
+    z-index: 1011; /* Ensure the menu icon is clickable */
+    /* Add more styles for the menu icon here */
+}
+
+/* When the menu icon is clicked, toggle a class that displays the navigation items */
+.nav-active .navbar-nav {
+    display: flex; /* Display the navigation items */
+    flex-direction: column; /* Stack them vertically */
+    position: absolute;
+    top: 100%; /* Directly below the header */
+    left: 0;
+    background-color: #00A4BD; /* Match the header background */
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.nav-active .nav-link,
+.nav-active .dropdown-item {
+    display: block; /* Display the links as block elements */
+    padding: 0.5rem; /* Add padding for tap targets */
+}
+
+}
