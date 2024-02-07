@@ -1,10 +1,12 @@
 .contact-page {
+  padding-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center; /* Align items to the top */
   margin: auto;
   max-width: 1200px;
   position: relative;
+  background-color: azure;
 }
 .form-section {
   flex: 1;
@@ -15,6 +17,7 @@
   flex-direction: column;
   justify-content: flex-start; 
   position: relative;
+  
   z-index: 2; /* to ensure the form section is above the slanted separator */
 }
 .heading-section h1 {
@@ -22,7 +25,7 @@
 }
 .form-group {
   align-self: flex-start;
-  background-color: azure;
+  
   max-width: 80%; /* This makes the input fields as wide as their container */
 margin: 0 ; /* This centers the form-group within the form-section */
 }
@@ -33,10 +36,29 @@ margin: 0 ; /* This centers the form-group within the form-section */
   
   .form-group input,
   .form-group textarea {
-  width: 50%; /* Full width of the form-group */
+  width: 100%; /* Full width of the form-group */
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
+  }
+  #whatsappButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000; /* Ensure it stays on top */
+    background-color: #25D366; /* WhatsApp color */
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #whatsappButton img {
+    width: 40px; /* Adjust size as needed */
+    height: auto;
   }
   
   /* Ensure the button matches the input fields in width */
@@ -55,6 +77,7 @@ margin: 0 ; /* This centers the form-group within the form-section */
     height: 100vh; /* Full height of the viewport */
     transition: transform 0.3s ease-in-out;
     z-index: 1;
+    background-color: azure;
   }
   .contact-page::before {
     content: '';
@@ -68,7 +91,7 @@ margin: 0 ; /* This centers the form-group within the form-section */
     z-index: 1; /* to ensure the separator is between the sections */
   }
   .image-section:hover {
-    transform: scale(0.8); /* Decrease the size of the image */
+    transform: scale(1); /* Decrease the size of the image */
   }
   
   .image-section img {
@@ -86,7 +109,7 @@ margin: 0 ; /* This centers the form-group within the form-section */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+  background: rgba(93, 204, 206, 0.7); /* Semi-transparent overlay */
   color: white;
   width: 100%;
   height: 100%;
@@ -137,6 +160,20 @@ button {
   color: white;
   cursor: pointer;
 }
+.Location {
+  width: 100%;
+  margin-top: 25px;
+  max-height: 450px; /* Adjust height as needed */
+  overflow: hidden;
+   /* To handle any overflow issues */
+}
+
+.Location iframe {
+  width: 100%;
+  height: 450px; /* Match the height of the Location div */
+  border: none;
+  box-shadow: #000; /* Remove any default border */
+}
 
 @media (max-width: 768px) {
   .contact-page {
@@ -145,17 +182,59 @@ button {
   .contact-page::before {
     display: none;
   }
+  .image-section{
+    padding-bottom: 0;
+    height:300px; /* Adjust as needed */
+  }
   .form-section,
   .image-section {
     width: 100%;
+    
+    height: max-content;
   }
+  .form-group {
+  align-self: flex-start;
+  max-width: 100%; /* This makes the input fields as wide as their container */
+margin: 0 ; /* This centers the form-group within the form-section */
+}
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color:lightcyan;
+  color: black;
+  outline: black;
 
-  .image-section {
-    height:
-    300px; /* Adjust as needed */
+  cursor: pointer;
   }
   
-  .doctor-info {
-  display: none; /* Optionally hide the overlay on smaller devices */
+  
+ 
+  .Location {
+    position: fixed; /* Make the button float */
+    bottom: 20px; /* Position from bottom */
+    left: 20px; /* Position from left */
+    width: 60px; /* Width of the button */
+    height: 60px; /* Height of the button */
+    background-color: #007bff; /* Button color */
+    border-radius: 50%; /* Round shape */
+    display: flex; /* Flexbox for alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for better visibility */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    z-index: 1000; /* Ensure it's above other elements */
   }
+  
+
+  .Location:before {
+    content: '\1F4CD'; /* Unicode for location pin icon */
+    font-size: 24px; /* Icon size */
+    color: white; /* Icon color */
+  }
+
+  .Location iframe {
+    display: none; /* Hide the iframe in mobile view */
+  }
+
   }

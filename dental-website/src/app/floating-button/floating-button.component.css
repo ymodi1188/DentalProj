@@ -1,0 +1,30 @@
+.floating-btn {
+    position:fixed;
+    bottom:20px;
+    left: 87%;
+    width: 60%;
+    max-width: 300px;
+    background-color:#52bc9b;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0,0.1);
+
+    transform: translateX(-50%);
+}
+
+.floating-btn:hover {
+    background-color: #01705d;
+}
+@media only screen and (max-width:600px) {
+    .floating-btn{
+        bottom: 10px;
+        font-size: 14px;
+        padding: 10px 20px;
+        left:50%;
+    }
+    
+}

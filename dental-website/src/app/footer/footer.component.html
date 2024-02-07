@@ -2,15 +2,21 @@
 <footer class="footer">
     <div class="footer-content">
       <div class="footer-block">
-        <h5>OFFICE HOURS</h5>
+        <h5>MEETING HOURS</h5>
         <ul class="office-hours">
           <li *ngFor="let hour of officeHours">{{ hour.day }}: {{ hour.time }}</li>
         </ul>
       </div>
       <div class="footer-block">
-        <img [src]="logoUrl" alt="Greenberg Orthodontics Logo" class="footer-logo">
+        <a href="/">
+        <img [src]="logoUrl" alt="MDDS-DR_Markanday" class="footer-logo">
+        </a>
         <address>{{ address }}</address>
         <p>{{ phone }}</p>
+        <div class="Location" id="maplocation" (click)="goTomaps()">
+          <i class="fa fa-map-marker" aria-hidden="true">Location</i>
+          <i class="fa fa-globe" aria-hidden="true"></i>
+        </div>
       </div>
       <div class="footer-block footer-rating">
         <p class="rating">{{ rating }} ★★★★★</p>
@@ -23,9 +29,7 @@
       </a>
     </div>
     <div class="footer-bottom">
-      <p>© {{ currentYear }} Greenberg Orthodontics & TMJ | All Rights Reserved</p>
-      <div class="footer-links">
-        <a *ngFor="let link of bottomLinks" href="{{ link.url }}">{{ link.label }}</a>
-      </div>
+      <p>© {{ currentYear }} DR. MARKANDAY DENTAL DESIGN STUDIO | All Rights Reserved</p>
+     
     </div>
 </footer>

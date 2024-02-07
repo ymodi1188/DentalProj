@@ -1,0 +1,35 @@
+<div class="wrapper">
+  <div class="container">
+      <div class="slideshow">
+          <div class="slideshow-left">
+              <div class="Lslide" *ngFor="let color of colors; let i = index" [ngStyle]="{'background-color': color, 'top': getTopPosition(i, true)}">
+                  <div class="Lslide-content">
+                      <h2>{{ titles[i] }}</h2>
+                      <p>Be a part of our creation</p>
+                      <div class="button">
+                          <a href="#">
+                              <p>More</p>
+                              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+
+          <div class="slideshow-right">
+              <div class="Rslide" *ngFor="let imgSrc of imageSources; let i = index" [ngStyle]="{'top': getTopPosition(i, false)}">
+                  <img [src]="imgSrc" alt="">
+              </div>
+          </div>
+
+          <div class="control">
+              <div class="oncontrol control-top" (click)="moveToTop()">
+                  <i class="fa fa-arrow-up" aria-hidden="true"></i>
+              </div>
+              <div class="oncontrol control-bottom" (click)="moveToBottom()">
+                  <i class="fa fa-arrow-down" aria-hidden="true"></i>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

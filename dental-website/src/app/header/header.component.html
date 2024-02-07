@@ -1,42 +1,72 @@
-<header class="main-header">
-    <div class="header-top">
-      <div class="container top-content">
-        <span class="cta">Schedule a Complimentary Consultation →</span>
-        <div class="contact-info">
-          <em class="orthodontist-info">{{ orthodontistInfo }}</em><br>
-          <span class="availability-info">{{ availabilityInfo }}</span>
-        </div>
-      </div>
+<div class="top-header">
+  <span class="left-corner">Schedule a complementary consultation -></span>
+  <div class="center-logo">
+    <a href="/" class="logo-link">
+      <!-- Replace with your logo -->
+      <img src="assets/logo.png" alt="Logo">
+    </a>
+  </div>
+  <div class="right-corner">
+    <div>MARKANDAY DENTAL DESIGN STUDIO</div>
+    <div>AVAILABLE 24/7 - (0154)000000</div>
+  </div>
+</div>
+
+<!-- Bottom Header -->
+<div class="bottom-header">
+  <nav class="main-nav">
+    <ul class="navbar-nav">
+    <ng-container *ngFor="let item of menuItems; let i = index">
+      <li class="nav-item" [class.dropdown]="item.dropdown"
+      (mouseover)="toggleDropdown(item.label, true)" 
+      (mouseleave)="toggleDropdown(item.label, false)">
+    <a [routerLink]="item.link" class="nav-link" *ngIf="!item.dropdown">{{ item.label }}</a>
+    <a class="nav-link dropdown-toggle" *ngIf="item.dropdown">{{ item.label }}</a>
+    <div class="dropdown-menu" *ngIf="dropdownOpen[item.label]"
+        (mouseover)="toggleDropdown(item.label, true)" 
+        (mouseleave)="toggleDropdown(item.label, false)">
+      <a class="dropdown-item" href="#" *ngFor="let subItem of item.subItems">{{ subItem }}</a>
     </div>
-    <nav class="main-nav">
-      <div class="container nav-container">
-        <div class="logo">
-          <img [src]="logoUrl" alt="Greenberg Orthodontics" class="header-logo">
-        </div>
-        <button class="nav-toggle" (click)="toggleNav()">&#9776;</button> <!-- Menu button -->
-        <ul class="navbar-nav">
-          <ng-container *ngFor="let item of navItems; let i = index">
-            <li class="nav-item" [class.dropdown]="item.dropdown"
-            (mouseover)="toggleDropdown(item.label, true)" 
-            (mouseleave)="toggleDropdown(item.label, false)">
-          <a [routerLink]="item.link" class="nav-link" *ngIf="!item.dropdown">{{ item.label }}</a>
-          <a class="nav-link dropdown-toggle" *ngIf="item.dropdown">{{ item.label }}</a>
-          <div class="dropdown-menu" *ngIf="dropdownOpen[item.label]"
-              (mouseover)="toggleDropdown(item.label, true)" 
-              (mouseleave)="toggleDropdown(item.label, false)">
-            <a class="dropdown-item" href="#" *ngFor="let subItem of item.subItems">{{ subItem }}</a>
-          </div>
-        </li>
-            
-              
-            <li *ngIf="i < navItems.length - 1" class="nav-separator"></li>
-     
-          </ng-container>
-        </ul>
-        <div class="logo">
-          <img [src]="logoUrl" alt="Greenberg Orthodontics" class="header-logo">
-        </div>
-      </div>
-    </nav>
-  </header>
+    </li>
+      
+        
+      <li *ngIf="i < menuItems.length - 1" class="nav-separator"></li>
+    
+    </ng-container> 
+  </ul>
+  </nav>
+</div>
+
+<div class="mobile-header" >
+  <div class="mobile-logo">
+    <a href="/" class="logo-link">
+      <!-- Replace with your logo -->
+      <img src="assets/logo.png" alt="Logo">
+    </a>
+  </div>
+  <div class="menu-icon" (click)="toggleMobileMenu()">
+    <!-- Replace with your menu icon -->
+    <img src="assets/menu-icon-png-28.jpg" alt="Menu">
+  </div>
+</div>
+
+<!-- Mobile Menu Panel -->
+<div class="mobile-menu" *ngIf="isMobileMenuVisible" >
   
+    <ul class="navbar-nav">
+    <ng-container *ngFor="let item of menuItems; let i = index">
+      <li class="nav-item" [class.dropdown]="item.dropdown"
+      (mouseover)="toggleDropdown(item.label, true)" 
+      (mouseleave)="toggleDropdown(item.label, false)">
+    <a [routerLink]="item.link" class="nav-link" *ngIf="!item.dropdown">{{ item.label }}</a>
+    <a class="nav-link dropdown-toggle" *ngIf="item.dropdown">{{ item.label }}</a>
+    <div class="dropdown-menu" *ngIf="dropdownOpen[item.label]"
+        (mouseover)="toggleDropdown(item.label, true)" 
+        (mouseleave)="toggleDropdown(item.label, false)">
+      <a class="dropdown-item" href="#" *ngFor="let subItem of item.subItems">{{ subItem }}</a>
+    </div>
+    </li>
+    </ng-container> 
+  </ul>
+
+</div>

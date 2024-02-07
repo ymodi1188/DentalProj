@@ -1,10 +1,10 @@
 /* footer.component.css */
 .footer {
-    background-color: #2c3e50; /* Dark blue background */
-    color: white;
+    background-color: rgb(207, 228, 241); /* Dark blue background */
+    color: rgb(14, 115, 179);
     padding: 20px 0;
   }
-  
+
   .footer-content {
     display: flex;
     justify-content: space-around;
@@ -13,7 +13,8 @@
   }
   
   .footer-block {
-    margin: 10px;
+    margin-top: 0px;
+
   }
   
   .office-hours {
@@ -22,7 +23,12 @@
   }
   
   .footer-logo {
-    width: 150px;
+    width: 300px;
+    height: 250px;
+    
+  }
+  .footer-logo:hover{
+    transform: scale(120%);
   }
   
   .footer-rating {
@@ -54,12 +60,12 @@
   }
   
   .footer-social .social-link {
-    color: #FFFFFF; /* Adjust the color as needed */
+    color: rgba(2, 130, 185, 0.882); /* Adjust the color as needed */
     margin: 0 10px; /* Adjust the spacing between icons as needed */
   }
   
   .footer-social .social-link:hover {
-    color: #CCCCCC; /* Adjust for hover effect if needed */
+    color: #0c0c0c; /* Adjust for hover effect if needed */
   }
   @media (max-width: 768px) {
     .footer-content {

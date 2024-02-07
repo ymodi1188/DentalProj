@@ -1,282 +1,277 @@
-.main-header {
-    position: fixed; /* Fixed positioning relative to the viewport */
-    top: 0;         /* Align the header at the top of the viewport */
-    left: 0;        /* Align the header to the left of the viewport */
-    right: 0;       /* Align the header to the right of the viewport */
-    z-index: 1000;  /* Ensure it stays on top of other content */
-    background-color: #00A4BD; /* Your header's background color */
-  }
-  
-  .header-top {
-    background-color: #FFFFFF;
-    padding-top: 0.9rem;
-    padding-bottom: 0.9rem; /* Corrected padding for a bigger top bar */
-    text-align: center;
-    color: #00A4BD;
-    font-size: 1.2rem; /* Increase font size as desired */
-    font-weight: bold;
-    border-bottom: 2px solid #02747E; /* Thicker border for the separator */
-    position: relative; /* Position relative for absolute positioning of the logo */
-}
-  
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 20px; /* Left margin */
-    margin-right: 20px; /* Right margin */
-  }
-  /* .header-top .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column; /* Stack elements vertically 
-  
-    width: calc(100% - 40px); /* Adjust width accounting for margins 
-  } */
-  /* ... other styles ... */
-
-.cta {
-    flex-grow: 1;
-    text-align: left;
-    font-size: 1.2rem; /* Increase font size as desired */
-    font-weight: bold; /* Make the text bold */
-    color: #00A4BD; /* Assuming white text */
-  }
-  
-  /* ... additional styles and media queries as needed ... */
-  
-  
-  .orthodontist-info {
-    color: #707070; /* Grey color for the orthodontist info */
-    font-style: italic; /* Italic style for the orthodontist info */
-  }
-  
-  .contact-info {
-    flex-grow: 1;
-    text-align: right;
-    font-size: 1.1rem; /* Increased font size */
-  }
-  
-  .main-nav {
-    padding: 1.2rem 0; /* Increased padding for a bigger nav bar */
-  }
-  
-  .nav-container {
-    display: flex;
-    justify-content: center;
-    position: relative; /* Needed for absolute positioning of the logo */
-  }
-  
-  .navbar-nav {
-    display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-  
-  .nav-item {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-right: 10px;
-    font-size: 1.2rem; /* Increased font size */
-  }
-  
-  .nav-separator {
-    margin: 0 15px; /* Increased spacing around the separator */
-    font-size: 1.5rem; /* Increased font size for a larger separator */
-  }
-  
-  .nav-link {
-    text-decoration: none;
-    color: #FFFFFF;
-    font-weight: bold;
-  }
-  
-  .header-logo {
-    height: 60px; /* Increased size of the logo */
-  }
-  
-  .logo {
-    position: absolute;
-    top: -50px; /* Position the logo at the top of the header-top */
-    left: 50%; /* Center the logo */
-    transform: translateX(-50%) translateY(-50%); /* Adjust both horizontally and vertically */
-    height: auto; /* Adjust the height as needed */
-    z-index: 1010; /* Ensure the logo is above the other header content */
-}
-  .orthodontist-info {
-    color: grey; /* or any specific shade you prefer */
-    font-style: italic;
-  }
-  
-  .availability-info {
-    color: #00A4BD; /* Adjust color to match design */
-  }
-  
-  
-  .nav-separator {
-    height: 10px; /* Adjust height for visual preference */
-    width: 2px; /* Adjust width for visual preference */
-    background-color: #add8e6; /* Light shade of blue for the separator */
-    margin: 0 15px; /* Spacing around the separators */
-  }
-  /* ... other styles ... */
-
-/* Hover effect for list items */
-.nav-link, .action-item {
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .nav-link:hover, .action-item:hover {
-    
-    transform: scale(2.5); /* Swell effect */
-    
-    text-shadow: 0px 0px 8px #ffffff;
-  }
-  
-  /* Hover effect for contact-info and cta */
-  .contact-info:hover em, .cta:hover {
-    color: #4169e1; /* Glowing white */
-    text-shadow: 0px 0px 8px #ffffff; /* Glow effect */
-  }
-  
-  /* Return to normal size after hover */
-  .nav-link:hover, .action-item:hover {
-    transform: scale(1.05); /* Swell effect */
-  }
-  
-  .nav-link:not(:hover), .action-item:not(:hover) {
-    transform: scale(1); /* Return to normal size */
-  }
-  /* ... existing styles ... */
-
-.dropdown {
-  position: relative;
+/* General Styles */
+a {
+  text-decoration: none;
+  color: black;
 }
 
+/* Top Header Styles */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+}
+
+.left-corner, .right-corner {
+  font-size: 0.9em;
+}
+
+.center-logo .logo-link img {
+  max-height: 50px;
+}
+
+/* Bottom Header Styles */
+.bottom-header {
+  background-color:lightskyblue;
+  padding: 10px 0;
+}
+
+.bottom-header nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bottom-header nav ul li {
+  margin: 0 10px;
+}
+
+.bottom-header nav ul li a {
+  color: white;
+  padding: 5px 10px;
+}
+
+/* Dropdown Menu */
 .dropdown-menu {
   display: none;
   position: absolute;
-  background-color: rgba(173, 216, 230, 0.7); /* Baby blue with some transparency */
-  min-width: 160px;
+  background-color: #f9f9f9;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
-.dropdown-item {
-  color: #000;
+.dropdown-menu a {
+  color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  text-align: left;
+}
+
+/* Mobile Header Styles */
+.mobile-header {
+  display: none;
+}
+
+.mobile-header .mobile-logo .logo-link img {
+  max-height: 40px;
+}
+
+.mobile-header .menu-icon img {
+ 
+  max-height: 30px;
+}
+
+/* Mobile Menu Panel Styles */
+.mobile-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background-color: lightskyblue;
+  padding: 10px 20px;
+}
+
+.mobile-menu ul {
+  font-style: bold;
+  padding: 0;
+  width: 50%;
+}
+
+.mobile-menu ul li a {
+  display: block;
+  margin: 10px 0;
+  color: black;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  position: relative; /* Needed for absolute positioning of the logo */
+}
+
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-item {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-right: 10px;
+  font-size: 1.2rem; /* Increased font size */
+}
+
+.nav-separator {
+  margin: 0 15px; /* Increased spacing around the separator */
+  font-size: 1.5rem; /* Increased font size for a larger separator */
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.nav-separator {
+  height: 10px; /* Adjust height for visual preference */
+  width: 2px; /* Adjust width for visual preference */
+  background-color: #add8e6; /* Light shade of blue for the separator */
+  margin: 0 15px; /* Spacing around the separators */
+}
+/* ... other styles ... */
+
+/* Hover effect for list items */
+.nav-link, .action-item {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover, .action-item:hover {
+  
+  transform: scale(2.5); /* Swell effect */
+  
+  text-shadow: 0px 0px 8px #ffffff;
+}
+
+/* Hover effect for contact-info and cta */
+.contact-info:hover em, .cta:hover {
+  color: #4169e1; /* Glowing white */
+  text-shadow: 0px 0px 8px #ffffff; /* Glow effect */
+}
+
+/* Return to normal size after hover */
+.nav-link:hover, .action-item:hover {
+  transform: scale(1.05); /* Swell effect */
+}
+
+.nav-link:not(:hover), .action-item:not(:hover) {
+  transform: scale(1); /* Return to normal size */
+}
+/* ... existing styles ... */
+
+.dropdown {
+position: relative;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+background-color: rgba(173, 216, 230, 0.7); /* Baby blue with some transparency */
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+}
+
+.dropdown-item {
+color: #000;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
 }
 
 .dropdown-item:hover {
-  background-color: #f1f1f1;
+background-color: #f1f1f1;
+}
+.main-nav {
+  padding: 1.2rem 0; /* Increased padding for a bigger nav bar */
 }
 
+
 .show .dropdown-menu {
-  display: block;
+display: block;
 }
 
 /* ... additional styles and media queries as needed ... */
 
-  
-  /* ... additional styles and media queries as needed ... */
-  
-  
-  /* Additional styles and media queries as needed */
-  /* ... existing styles ... */
+
+/* ... additional styles and media queries as needed ... */
+
+
+/* Additional styles and media queries as needed */
+/* ... existing styles ... */
 
 .nav-item.dropdown {
-  position: relative;
+position: relative;
 }
 
 .dropdown-toggle {
-  cursor: pointer;
+cursor: pointer;
 }
 
 .dropdown-menu {
-  display: none;
-  position: absolute;
-  border-radius: 3%;
-  background-color: rgba(137, 196, 244, 0.7); /* Baby blue with some transparency */
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  z-index: 100;
+display: none;
+position: absolute;
+border-radius: 3%;
+background-color: rgba(137, 196, 244, 0.9); /* Baby blue with some transparency */
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+z-index: 100;
 }
 
 .nav-item.dropdown:hover .dropdown-menu {
-  display: block;
+display: block;
 }
 
 .dropdown-item {
-  padding: 10px 20px;
-  color: #000;
-  text-decoration: none;
+padding: 10px 20px;
+color: #000;
+text-decoration: none;
 }
-.menu-icon {
-    
-  display: none; /* Show the menu icon */
-  cursor: pointer;
-  z-index: 1011; /* Ensure the menu icon is clickable */
-  /* Add more styles for the menu icon here */
-}
+
 
 .dropdown-item:hover {
-  background-color: #add8e6; /* Lighter shade for hover */
+background-color: #add8e6; /* Lighter shade for hover */
 }
-@media (max-width: 768px) {
-  .main-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+  .top-header, .bottom-header {
+    display: none;
   }
-  .header-top {
+
+  .mobile-header, .mobile-menu {
     display: flex;
-    justify-content: space-between; /* Align elements to either end */
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem; /* Reduce padding on smaller screens */
-}
+    z-index: 1000;
+  }
+  .mobile-menu ul {
+    position:absolute;
+    height: 100%;
+    font-style: bold;
+    list-style-type: none;
+    padding-left: 5%;
+    margin-left:50% ;
+    background-color:#41cce1d7;
+    z-index: 1000;
+    opacity: 80%;
+    border-radius: 3%;
+    border-style:none;
+  }
 
-.cta {
-    display: none; /* Hide the call to action text */
-}
-
-.navbar-nav,
-.nav-link,
-.nav-item,
-.dropdown,
-.dropdown-menu {
-    display: none; /* Hide the navigation items */
-}
-
-.menu-icon {
-    
-    display: block; /* Show the menu icon */
+  .menu-icon {
     cursor: pointer;
-    z-index: 1011; /* Ensure the menu icon is clickable */
-    /* Add more styles for the menu icon here */
-}
-
-/* When the menu icon is clicked, toggle a class that displays the navigation items */
-.nav-active .navbar-nav {
-    display: flex; /* Display the navigation items */
-    flex-direction: column; /* Stack them vertically */
-    position: absolute;
-    top: 100%; /* Directly below the header */
-    left: 0;
-    background-color: #00A4BD; /* Match the header background */
-    width: 100%;
-    padding: 1rem;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.nav-active .nav-link,
-.nav-active .dropdown-item {
-    display: block; /* Display the links as block elements */
-    padding: 0.5rem; /* Add padding for tap targets */
-}
-
+  }
+  .nav-container {
+    
+    display: block;
+    padding-left: 5%;
+    margin-left: 50%;
+   
+   /* Needed for absolute positioning of the logo */
+  }
+  
+  .navbar-nav {
+    display: block;
+    padding-left: 5%;
+    margin-left: 50%;
+  }
 }

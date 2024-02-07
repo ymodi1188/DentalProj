@@ -6,13 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  isMobileMenuVisible = false;
 
-
- 
-  orthodontistInfo = 'MARKANDAY DENTAL DESIGN STUDIO';
-  availabilityInfo = 'Available 24/7 (1054) 000000';
-  logoUrl = '/assets/logo.png'; // The path to your logo image
-  navItems = [
+  menuItems = [
     {
       label: 'Services',
       dropdown: true,
@@ -23,7 +19,7 @@ export class HeaderComponent {
       label: 'New Patients',
       dropdown: true,
       subItems: ['Your first visit', 'New Patient Form'],
-      link: '/new-patients'
+      link: '/assets/patient-form.pdf'
     },
     { label: 'Smile Gallery', dropdown: false, link: '/smile-gallery' },
     { label: 'Testimonials', dropdown: false, link: '/testimonials' },
@@ -33,19 +29,12 @@ export class HeaderComponent {
       dropdown: true,
       subItems: ['Dr. Markanday', 'Address on map', 'Blogs'],
       link: '/about-us'
-    },
-    // Adding more items without dropdowns
-
-    // ... add other items as needed ...
+    }
   ];
-  // Object to track which dropdowns are open
   dropdownOpen: { [key: string]: boolean } = {};
-  navActive = false;
-
-  toggleNav(): void {
-    this.navActive = !this.navActive;
+  toggleMobileMenu() {
+    this.isMobileMenuVisible = !this.isMobileMenuVisible;
   }
-
   toggleDropdown(itemLabel: string, isOpen: boolean): void {
     this.dropdownOpen[itemLabel] = isOpen;
   }
@@ -54,5 +43,11 @@ export class HeaderComponent {
     Object.keys(this.dropdownOpen).forEach(key => {
       this.dropdownOpen[key] = false;
     });
+  
+}
+closeMobileMenu() {
+  if (this.isMobileMenuVisible) {
+    this.isMobileMenuVisible = false;
   }
+}
 }

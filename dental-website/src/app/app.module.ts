@@ -7,13 +7,17 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { ContactComponent } from './contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SmileGalleryComponent } from './smile-gallery/smile-gallery.component';
+import { FloatingButtonComponent } from './floating-button/floating-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    ContactComponent
+    ContactComponent,
+    SmileGalleryComponent,
+    FloatingButtonComponent
   ],
   imports: [
     AppRoutingModule,
